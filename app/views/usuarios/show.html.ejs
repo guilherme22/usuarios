@@ -1,0 +1,18 @@
+<div class="hero-unit">
+  <h2 class="id"><%= usuario.id %></h2>
+  <%- linkTo('Editar este usuário', editUsuarioPath(params.id), {class: 'btn pull-right'}); %>
+  <%- linkTo('Voltar para lista de usuários', usuarioPath(''), {class: 'btn pull-right'}); %>
+</div>
+
+<h2>Informações do usuário</h2>
+<% for(var i in usuario) { -%>
+<% if(i !== 'saved' && i !== 'password') { -%>
+<div class="row list-item">
+  <div class="span4">
+    <h3><%= i %></h3>
+  </div>
+  <div class="span8">
+    <h3><i class="icon-list-alt"></i><span class="<%= i %>"><%= usuario[i] %></span></h3>
+  </div>
+</div>
+<% } -%><% } -%>
